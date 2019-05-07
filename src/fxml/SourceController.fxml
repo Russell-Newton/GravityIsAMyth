@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Text?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" onDragDetected="#handleTouch"
+  onMouseDragged="#handleTouch"
+  prefHeight="1050.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/8"
+  fx:controller="controllers.SourceController" fx:id="root">
+  <children>
+    <Group/>
+    <Circle centerX="960.0" centerY="525.0" fill="DODGERBLUE" opacity="0.5" radius="25.0"
+      stroke="BLACK" strokeType="INSIDE" fx:id="gravitySource"/>
+    <Text layoutX="14.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Touch Mode:"/>
+    <Text layoutX="14.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0"
+      text="Source Mass:  "/>
+    <Text layoutX="102.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0"
+      wrappingWidth="62.0" fx:id="sourceMassText"/>
+    <Slider layoutX="14.0" layoutY="100.0" max="2500.0" minorTickCount="1"
+      onDragDetected="#updateSourceMass"
+      onMouseDragged="#updateSourceMass" prefHeight="17.0" prefWidth="150.0"
+      snapToTicks="true" value="500.0" fx:id="sourceMassSlider"/>
+    <ToggleButton layoutX="14.0" layoutY="126.0" mnemonicParsing="false"
+      onAction="#toggleCollisions"
+      text="Have Particles Collide" fx:id="collisionButton"/>
+    <Button layoutX="14.0" layoutY="1006.0" mnemonicParsing="false" onAction="#clearParticles"
+      text="Clear Particles" fx:id="clearButton"/>
+    <ComboBox layoutX="14.0" layoutY="34.0" onAction="#setTouchMode" prefWidth="150.0"
+      fx:id="touchModeChoices"/>
+    <Button layoutX="1725.0" layoutY="1012.0" mnemonicParsing="false"
+      onAction="#activateDirectionControl"
+      text="Switch to Direction Control" fx:id="switchButton"/>
+  </children>
+</AnchorPane>
